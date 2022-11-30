@@ -1,0 +1,15 @@
+server:
+  port: 8096
+spring:
+  application:
+    name: company
+eureka:
+  client:
+    enabled: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+  service-url:
+    defaultZone: http://localhost:8080/eureka
+  instance:
+    hostname: localhost

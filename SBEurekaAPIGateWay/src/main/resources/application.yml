@@ -1,0 +1,27 @@
+server:
+  port: 8090
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka
+spring:
+  application:
+    name: api-gateway-service
+  cloud:
+    gateway:
+      routes:
+         - id: subject
+           uri: http://localhost:8098/
+           predicates:
+            - Path=/subject/**
+         - id: student
+           uri: http://localhost:8099/
+           predicates:
+            - Path=/student/**
+         - id: student
+           uri: http://localhost:8096/
+           predicates:
+            - Path=/company/**
+#anjie-rock
+
