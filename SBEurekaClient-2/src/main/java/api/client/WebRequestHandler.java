@@ -15,7 +15,8 @@ public class WebRequestHandler
 		return "subject service up";
 	}
 	@GetMapping("/test")
-	public String name() {
+	public String name() throws InterruptedException {
+		Thread.sleep(5000);
 		System.out.println("subject called");
 		return "Subject Test";
 	}
